@@ -42,6 +42,26 @@ app.get("/chapter", (req, res) => {
     res.json(rows);
   });
 });
+// hadith
+app.get("/hadith", (req, res) => {
+  database.all("SELECT * FROM hadith", (error, rows) => {
+    if (error) {
+      res.status(500).json({ error: error.message });
+      return;
+    }
+    res.json(rows);
+  });
+});
+// section
+app.get("/section", (req, res) => {
+  database.all("SELECT * FROM section", (error, rows) => {
+    if (error) {
+      res.status(500).json({ error: error.message });
+      return;
+    }
+    res.json(rows);
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
