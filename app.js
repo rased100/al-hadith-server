@@ -32,6 +32,16 @@ app.get("/books", (req, res) => {
     res.json(rows);
   });
 });
+// chapter
+app.get("/chapter", (req, res) => {
+  database.all("SELECT * FROM chapter", (error, rows) => {
+    if (error) {
+      res.status(500).json({ error: error.message });
+      return;
+    }
+    res.json(rows);
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
