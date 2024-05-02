@@ -3,7 +3,7 @@ const cors = require("cors");
 const sqlite3 = require("sqlite3").verbose();
 
 const app = express();
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5000;
 
 // Enable CORS for all origins
 app.use(cors());
@@ -33,7 +33,7 @@ app.get("/books", (req, res) => {
   });
 });
 // chapter
-app.get("/chapter", (req, res) => {
+app.get("/chapters", (req, res) => {
   database.all("SELECT * FROM chapter", (error, rows) => {
     if (error) {
       res.status(500).json({ error: error.message });
@@ -43,7 +43,7 @@ app.get("/chapter", (req, res) => {
   });
 });
 // hadith
-app.get("/hadith", (req, res) => {
+app.get("/hadiths", (req, res) => {
   database.all("SELECT * FROM hadith", (error, rows) => {
     if (error) {
       res.status(500).json({ error: error.message });
@@ -53,7 +53,7 @@ app.get("/hadith", (req, res) => {
   });
 });
 // section
-app.get("/section", (req, res) => {
+app.get("/sections", (req, res) => {
   database.all("SELECT * FROM section", (error, rows) => {
     if (error) {
       res.status(500).json({ error: error.message });
