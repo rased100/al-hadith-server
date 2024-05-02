@@ -33,7 +33,7 @@ app.get("/books", (req, res) => {
   });
 });
 // chapter
-app.get("/chapters", (req, res) => {
+app.get("/chapter", (req, res) => {
   database.all("SELECT * FROM chapter", (error, rows) => {
     if (error) {
       res.status(500).json({ error: error.message });
@@ -43,7 +43,7 @@ app.get("/chapters", (req, res) => {
   });
 });
 // hadith
-app.get("/hadiths", (req, res) => {
+app.get("/hadith", (req, res) => {
   database.all("SELECT * FROM hadith", (error, rows) => {
     if (error) {
       res.status(500).json({ error: error.message });
@@ -53,7 +53,7 @@ app.get("/hadiths", (req, res) => {
   });
 });
 // section
-app.get("/sections", (req, res) => {
+app.get("/section", (req, res) => {
   database.all("SELECT * FROM section", (error, rows) => {
     if (error) {
       res.status(500).json({ error: error.message });
